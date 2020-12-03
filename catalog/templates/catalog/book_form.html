@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <form class="form-inline" action="" method="post">
+  <div class="form-group mx-sm-3 mb-2">
+    {% csrf_token %}
+    <table class="table">
+        {{ form.as_table }}
+    </table>
+    <input class="btn btn-primary mb-2" type="submit" value="Submit">
+  </div>
+  </form>
+{% endblock %}

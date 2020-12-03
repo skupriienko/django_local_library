@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Name: {{ author.last_name }}</h1>
+
+  <p><strong>Name:</strong> <a href="">{{ author.last_name }} {{ author.first_name }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Date of birth:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>Date of death:</strong> {{ author.date_of_death }}</p>
+
+  <a class="btn btn-outline-warning" href="{% url 'author-update' author.pk %}" role="button">Update author</a>
+  <a class="btn btn-outline-danger" href="{% url 'author-delete' author.pk %}" role="button">Delete author</a>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Books</h4>
+
+    {% for book in author.book_set.all %}
+        <p><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></p>
+    {% endfor %}
+  </div>
+{% endblock %}
