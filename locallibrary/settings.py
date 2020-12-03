@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'p#4gv(fbjp#1plyru=n0-ed0hdq)e5
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['secret-shelf-01811.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['secret-shelf-01811.herokuapp.com']
 
 
 # Application definition
